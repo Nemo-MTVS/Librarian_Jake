@@ -1,22 +1,22 @@
 package librarian;
 
 public class ExportMemberList {
-    private LibraryMember[] members;
+    private List<LibraryMember> members = new ArrayList<>();
 
-    public ExportMemberList(LibraryMember[] members) {
+    public ExportMemberList(List<LibraryMember> members) {
         this.members = members;
     }
 
     public String exportMemberList() {
         StringBuilder sb = new StringBuilder();
         int totalMembers = 0;
-        totalMembers = members.length;
+        totalMembers = members.size();
         if (totalMembers > 0) {
             for (int i = 0; i < totalMembers; i++) {
                 if (i == 0) {
-                    sb.append(buildMemberInfo(members[i]));
+                    sb.append(buildMemberInfo(members.get(i)));
                 } else {
-                    sb.append("; " + buildMemberInfo(members[i]));
+                    sb.append("; " + buildMemberInfo(members.get(i)));
                 }
             }
         } else {
