@@ -5,7 +5,6 @@ public class LibraryMember {
     private String memberShipId;
     private int borrowLimit;
 
-//    public abstract int getFinalBorrowLimit();
 
     public LibraryMember(String name, String memberShipId, int borrowLimit) {
         this.name = name;
@@ -22,4 +21,15 @@ public class LibraryMember {
     public int getBorrowLimit() {
         return borrowLimit;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setMemberShipId(String memberShipId) {
+        this.memberShipId = memberShipId;
+    }
+    public void setBorrowLimit(int borrowLimit) {
+        this.borrowLimit = borrowLimit;
+    }
+
+
 }

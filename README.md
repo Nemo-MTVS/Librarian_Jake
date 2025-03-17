@@ -65,7 +65,8 @@ String name = scanner.nextLine();
 
 System.out.print("학생 회원입니까? (Y/N): ");
 boolean isStudent = scanner.nextLine().toUpperCase().equals("Y");
-
+// setter 설정 필요 - Name/Id/limit
+        
 // 회원 생성
 LibraryMember member;
 if (isStudent) {
@@ -73,12 +74,24 @@ if (isStudent) {
 } else {
     member = new LibraryMember(name, generateMemberId(), 3);
 }
-
+### GenerateID
+// Normal Member, Student Member ID 생성 필요.
+// 현재까지 멤버 수 인식.
+// 일반 멤버인 경우 LM 시작, 학생 멤버인 경우 SM 시작.
+// 뒷자리 숫자는 그냥 전체 멤버 수 + 1 방식.
+// 현재 상태에서 학생 생성시 SM006 생성 예정.
+// 전체 명단 출력.
 // 사서가 특정 회원의 대출 한도 수정
+
 System.out.print("대출 한도를 수정하시겠습니까? (Y/N): ");
 if (scanner.nextLine().toUpperCase().equals("Y")) {
     System.out.print("새로운 대출 한도를 입력하세요: ");
     int newLimit = Integer.parseInt(scanner.nextLine());
     member.setBorrowLimit(newLimit);
 }
+//대출한도 수정 Setter 함수 사용 인터페이스 생성
+//이름 기준으로 같은 사람 찾기.
+//찾은 후 멤버 대출 한도 변경.
+
 ```
+

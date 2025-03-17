@@ -14,13 +14,9 @@ public class ExportMemberList {
         if (totalMembers > 0) {
             for (int i = 0; i < totalMembers; i++) {
                 if (i == 0) {
-                    sb.append(members[i].getName() + ", "
-                            + members[i].getMemberShipId() + ", "
-                            + members[i].getBorrowLimit());
+                    sb.append(buildMemberInfo(members[i]));
                 } else {
-                    sb.append("; " + members[i].getName() + ", "
-                            + members[i].getMemberShipId() + ", "
-                            + members[i].getBorrowLimit());
+                    sb.append("; " + buildMemberInfo(members[i]));
                 }
             }
         } else {
@@ -28,4 +24,12 @@ public class ExportMemberList {
         }
         return sb.toString();
     }
+
+    private String buildMemberInfo(LibraryMember member) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(member.getName() + ", "
+                + member.getMemberShipId() + ", "
+                + member.getBorrowLimit());
+        return sb.toString();
+    };
 }
