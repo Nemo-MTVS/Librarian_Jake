@@ -9,11 +9,11 @@ public class Application {
         List<LibraryMember> members = new ArrayList<>();
         
         // Add initial members
-        addMemberAndPrint(members, new LibraryMember("Jake", "LM001", 3));
-        addMemberAndPrint(members, new LibraryMember("Lyn", "LM002", 3));
-        addMemberAndPrint(members, new LibraryMember("Kyle", "LM003", 3));
-        addMemberAndPrint(members, new StudentMember("Alan", "SM004", 3, 2));
-        addMemberAndPrint(members, new StudentMember("Bob", "SM005", 3, 2));
+        members.add(new LibraryMember("Jake", "LM001", 3));
+        members.add(new LibraryMember("Lyn", "LM002", 3));
+        members.add(new LibraryMember("Kyle", "LM003", 3));
+        members.add(new StudentMember("Alan", "SM004", 3, 2));
+        members.add(new StudentMember("Bob", "SM005", 3, 2));
 
         int totalMembers = members.size();
         System.out.println("Total members: " + totalMembers);
@@ -35,13 +35,6 @@ public class Application {
         addMemberAndPrint(members, newMember);
     }
 
-    private static void addMemberAndPrint(List<LibraryMember> members, LibraryMember member) {
-        members.add(member);
-        System.out.println("회원이 등록되었습니다:");
-        System.out.println("이름: " + member.getName());
-        System.out.println("ID: " + member.getMemberShipId());
-        System.out.println("대출 한도: " + member.getBorrowLimit());
-    }
 
     public static String generateMemberId(boolean isStudent, int totalMembers) {
         int memberId = totalMembers + 1;
