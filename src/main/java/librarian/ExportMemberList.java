@@ -26,6 +26,6 @@ public class ExportMemberList {
         } else {
             return "No Members";
         }
-        return sb.toString()+"/";
+        return sb.toString();
     }
 }

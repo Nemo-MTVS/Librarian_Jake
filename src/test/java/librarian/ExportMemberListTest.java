@@ -21,15 +21,17 @@ class ExportMemberListTest {
                 new StudentMember("Bob", "LM005", 3, 2)
         };
         exportMemberList = new ExportMemberList(members);
+        System.out.println("System Initialized");
     }
 
     @Test
     void exportMemberList() {
         String result = exportMemberList.exportMemberList();
-        Assertions.assertEquals("Jake, LM001, 3; Lyn, LM002, 3; Kyle, LM003, 3; Alan, LM004, 5; Bob, LM005, 5/"
+        System.out.println(result);
+        Assertions.assertEquals("Jake, LM001, 3; Lyn, LM002, 3; Kyle, LM003, 3; Alan, LM004, 5; Bob, LM005, 5"
                 , result);
         Assertions.assertTrue(
-                "Jake, LM001, 3; Lyn, LM002, 3; Kyle, LM003, 3; Alan, LM004, 5; Bob, LM005, 5/".equals(result)
+                "Jake, LM001, 3; Lyn, LM002, 3; Kyle, LM003, 3; Alan, LM004, 5; Bob, LM005, 5".equals(result)
         );
 
     }
@@ -38,5 +40,6 @@ class ExportMemberListTest {
     void tearDown() {
         members = null;
         exportMemberList = null;
+        System.out.println("System Terminated");
     }
 }
