@@ -24,8 +24,8 @@ public class ExportMemberList {
                 }
             }
         } else {
-            System.exit(0);
+            return "No Members";
         }
-        return sb.toString();
+        return sb.toString()+"/";
     }
 }

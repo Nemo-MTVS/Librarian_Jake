@@ -11,7 +11,7 @@ public class StudentMember extends LibraryMember {
     }
 
     @Override
-    public int getFinalBorrowLimit() {
+    public int getBorrowLimit() {
         return super.getBorrowLimit() + additionalBorrowLimit;
     }
 }

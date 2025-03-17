@@ -5,7 +5,7 @@ public class LibraryMember {
     private String memberShipId;
     private int borrowLimit;
 
-    public abstract int getFinalBorrowLimit();
+//    public abstract int getFinalBorrowLimit();
 
     public LibraryMember(String name, String memberShipId, int borrowLimit) {
         this.name = name;
